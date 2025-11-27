@@ -3,7 +3,16 @@
 include('Contact.php');
 
 class Agenda {
-//TODO: value objects for phone and email
+    private array $contacts;
+
+    public function __construct() {
+        $this->contacts = [];
+    }
+
+    public function createContact(): bool {
+       $this->contacts[] = new Contact();
+    }
+
 }
 
 ?>

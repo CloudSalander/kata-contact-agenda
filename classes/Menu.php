@@ -10,6 +10,13 @@ class Menu {
             echo $index." - ".$option.PHP_EOL;
         }
     }
+
+    public function doAction(int $option): void {
+        //TODO: Enum for options?
+        match ($option) {
+            0 => $agenda->createContact()
+        }
+    }
 }
 
 ?>

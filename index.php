@@ -11,6 +11,7 @@ $option = 0;
 while($option != EXIT_CODE) {
     $menu->showOptions();
     $option = readline(INPUT_MSG);
+    $menu->doOption(intval($option));
 }
 
 ?>
