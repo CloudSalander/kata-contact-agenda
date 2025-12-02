@@ -1,11 +1,13 @@
 <?php
-
+//Question for classrom: Can we divide more methods logic?
 include('Contact.php');
 
 class Agenda {
     private array $contacts;
 
     const REMOVE_MSG  = "Contact to remove?(select contact index number)";
+    //Note: Searching by surname is totally arbitry decision
+    const SEARCH_MSG = "Enter surname to search";
 
     public function __construct() {
         $this->contacts = [];
@@ -28,7 +30,13 @@ class Agenda {
             unset($this->contacts[$contactId]);
             $this->contacts = array_values($this->contacts);
         }
-        
+    }
+
+    public function searchContacts(): void {
+        $toSearch = readline(self::SEARCH_MSG);
+        foreach($this->contacts as $contact) {
+            if(str_contains($contact->getSurname(), $toSearch)) echo $contact;
+        }
     }
 
     private function isValidContactId(int $contactId): bool {
