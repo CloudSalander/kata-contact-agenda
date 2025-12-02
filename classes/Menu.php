@@ -15,7 +15,8 @@ class Menu {
         //TODO: Enum for options?
         match ($option) {
             0 => $this->agenda->createContact(),
-            1 => $this->agenda->showContacts()
+            1 => $this->agenda->showContacts(),
+            2 => $this->agenda->removeContact(),
         };
     }
 }
