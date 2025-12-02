@@ -8,6 +8,8 @@ class Agenda {
     const REMOVE_MSG  = "Contact to remove?(select contact index number)";
     //Note: Searching by surname is totally arbitry decision
     const SEARCH_MSG = "Enter surname to search";
+    //Note: Could be .txt or json...whatever.
+    const EXPORT_FILE_NAME = "contacts.txt";
 
     public function __construct() {
         $this->contacts = [];
@@ -37,6 +39,14 @@ class Agenda {
         foreach($this->contacts as $contact) {
             if(str_contains($contact->getSurname(), $toSearch)) echo $contact;
         }
+    }
+
+    public function exportContacts(): void {
+        $exportFile = fopen(self::EXPORT_FILE_NAME,'w');
+        foreach($this->contacts as $contact) {
+            fwrite($exportFile,$contact);
+        }
+        fclose($exportFile);
     }
 
     private function isValidContactId(int $contactId): bool {

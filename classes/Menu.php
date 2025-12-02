@@ -17,7 +17,9 @@ class Menu {
             0 => $this->agenda->createContact(),
             1 => $this->agenda->showContacts(),
             2 => $this->agenda->removeContact(),
-            3 => $this->agenda->searchContacts()
+            3 => $this->agenda->searchContacts(),
+            4 => $this->agenda->exportContacts(),
+            default => null
         };
     }
 }
