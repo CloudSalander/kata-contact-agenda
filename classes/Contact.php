@@ -35,5 +35,9 @@ class Contact {
     public function getPhone(): string {
         return $this->phone;
     }
+
+    public function __toString() {
+        return $this->surname.",".$this->name."  📞 ".$this->phone." ✉️  ".$this->email.PHP_EOL;
+    }
 }
 ?>

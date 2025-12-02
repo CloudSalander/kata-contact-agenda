@@ -13,6 +13,12 @@ class Agenda {
        $this->contacts[] = new Contact();
     }
 
+    public function showContacts(): void {
+        foreach($this->contacts as $index => $contact) {
+            echo $index.": ".$contact;
+        }
+    }
+
 }
 
 ?>
