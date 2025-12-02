@@ -1,9 +1,9 @@
 <?php
 
-include('Agenda.php');
-
 class Menu {
     const OPTIONS = ['Add Contact','Show Contacts','Delete Contact','Search Contact','Export Contacts','Exit'];
+
+    public function __construct(private Agenda $agenda){}
 
     public function showOptions(): void {
         foreach(self::OPTIONS as $index => $option) {
@@ -11,11 +11,11 @@ class Menu {
         }
     }
 
-    public function doAction(int $option): void {
+    public function doOption(int $option): void {
         //TODO: Enum for options?
         match ($option) {
-            0 => $agenda->createContact()
-        }
+            0 => $this->agenda->createContact()
+        };
     }
 }
 

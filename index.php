@@ -1,10 +1,12 @@
 <?php
 include('classes/Menu.php');
+include('classes/Agenda.php');
 
 define('EXIT_CODE',5);
 define('INPUT_MSG', "Please, enter your option(0 to 5)");
 
-$menu = new Menu();
+$agenda = new Agenda();
+$menu = new Menu($agenda);
 
 $option = 0;
 

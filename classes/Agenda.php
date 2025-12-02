@@ -9,7 +9,7 @@ class Agenda {
         $this->contacts = [];
     }
 
-    public function createContact(): bool {
+    public function createContact(): void {
        $this->contacts[] = new Contact();
     }
 
