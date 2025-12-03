@@ -50,7 +50,7 @@ class Agenda {
     }
 
     private function isValidContactId(int $contactId): bool {
-        return ($contactId > 0) && ($contactId < count($this->contacts));
+        return ($contactId >= 0) && ($contactId < count($this->contacts));
     }
 
 }
